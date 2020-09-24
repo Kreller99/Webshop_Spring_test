@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Webshop</title>
+</head>
+<body>
+<h1>Vareliste</h1>
+<div class="container-fluid">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Varenavn</th>
+            <th scope="col">Pris</th>
+            <th scope="col">Beskrivelse</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product: ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.description}"></td>
+            <td>
+                <a th:href="@{update(id=@{product.id})}" class="btn btn-primary" role="button">Opdater</a>
+                <a th:href="@{delete(id=@{product.id})}" class="btn btn-primary" role="button">Slet</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
