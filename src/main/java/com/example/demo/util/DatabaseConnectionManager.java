@@ -24,7 +24,8 @@ public class DatabaseConnectionManager {
             prop.load(propertyFile);
             user = prop.getProperty("db.user");
             password = prop.getProperty("db.password");
-            url = prop.getProperty("db.url");
+            //url = prop.getProperty("db.url");
+            url = "jdbc:mysql://den1.mysql3.gear.host/keaproductlist";
 
         }
         catch(FileNotFoundException e){
